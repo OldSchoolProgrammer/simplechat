@@ -126,7 +126,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('basicchat.herokuapp.com', 6379)],
+            "hosts": [('basicchat.herokuapp.com')],
         },
     },
 }
