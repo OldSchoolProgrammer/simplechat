@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'static')
 
 # Heroku Redis configuration
-
+REDIS_URL = 'redis://:pc8e39744e36acbfb2f4ecbcbb596c6725854753ecd1e9bda9e51c31a3b3895af@ec2-34-197-240-190.compute-1.amazonaws.com:13529'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
