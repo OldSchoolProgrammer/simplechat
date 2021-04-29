@@ -31,14 +31,16 @@ ALLOWED_HOSTS = ['192.168.1.2', 'basicchat.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'channels',
+    'chat',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'chat',
-    'channels',
+
+
 ]
 
 MIDDLEWARE = [
@@ -127,7 +129,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('basicchat.herokuapp.com')],
+            "hosts": [('192.168.1.2', 6379), ('basicchat.herokuapp.com')]
         },
     },
 }
