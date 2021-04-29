@@ -40,3 +40,4 @@ wincertstore==0.2
 click==7.1.2
 uvicorn==0.13.4
 h11==0.12.0
+uvloop==0.15.2
