@@ -26,7 +26,7 @@ SECRET_KEY = '$m2qtw%yefhn0#-ebf!59243h@(t0@-0j8os!&-u&7x14&a18^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'basicchat.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'basicchat.herokuapp.com', '192.168.1.2']
 
 
 # Application definition
