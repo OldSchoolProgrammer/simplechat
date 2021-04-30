@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = '$m2qtw%yefhn0#-ebf!59243h@(t0@-0j8os!&-u&7x14&a18^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.2', 'basicchat.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'basicchat.herokuapp.com']
 
 
 # Application definition
@@ -126,13 +127,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = Path.joinpath(BASE_DIR, 'static')
 
-# Heroku Redis configuration
-REDIS_URL = 'redis://:pc8e39744e36acbfb2f4ecbcbb596c6725854753ecd1e9bda9e51c31a3b3895af@ec2-34-197-240-190.compute-1.amazonaws.com:13529'
+# Heroku Redis and local channel configuration
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            'hosts': [REDIS_URL],
-        }
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
     },
 }
